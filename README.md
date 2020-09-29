@@ -1,3 +1,32 @@
+# Usage
+
+Since we may have to modify dockerfile or something, we choose use this repo from source.
+
+1. download and cd to repo dir
+
+2. python3 setup.py install
+
+3. `ue4-docker build 4.19.1 --cuda=10.1 --exclude=ddc`
+
+you must specify cuda arg to use cudagl image
+in my test, ddc must be disabled with exclude arg.
+
+4. It seems ue4-engine is enough for use.
+
+the default user is ue4 and you can't change to root since there are no root user password.
+If you want to use sudo, need `docker exec --user=root -it --privileged container_name bash`
+
+UE4Editor is in ~/UnrealEngine/Engine/Binaries/Linux, must run with non-root user...
+
+to run UE4Editor,  libxrandr2 and x11-xserver-utils must be installed manually if you don't want to modify this repo
+
+
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+
+
+
+
 <p align="center"><img src="https://raw.githubusercontent.com/adamrehn/ue4-docker/master/resources/images/banner.svg?sanitize=true" alt="Unreal Engine and Docker Logos" height="100"></p>
 <h1 align="center"><strong>Unreal Engine 4 Docker Containers</strong></h1>
 <h3 align="center"><a href="https://docs.adamrehn.com/ue4-docker/use-cases/continuous-integration">Continuous Integration</a> &bull; <a href="https://docs.adamrehn.com/ue4-docker/use-cases/cloud-rendering">Cloud Rendering</a> &bull; <a href="https://docs.adamrehn.com/ue4-docker/use-cases/microservices">UE4-Powered Microservices</a></h3>
