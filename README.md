@@ -20,6 +20,8 @@ UE4Editor is in ~/UnrealEngine/Engine/Binaries/Linux, must run with non-root use
 
 to run UE4Editor,  libxrandr2 and x11-xserver-utils must be installed manually if you don't want to modify this repo
 
+5. clone ue4 source code is slow, you may want to add proxy before cloning
+use git config to setup [otherwise will meet handshake error](https://stackoverflow.com/questions/51088635/git-clone-error-gnutls-handshake-failed-an-unexpected-tls-packet-was-receive)
 
 --------------------------------------------------------------------
 --------------------------------------------------------------------
